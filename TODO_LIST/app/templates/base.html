@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} To-Do App{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+</head>
+
+<body>
+
+    <!-- --------------------HEADER----------------------- -->
+     <header>
+        <div class="container">
+            <h1>My To-Do APP</h1>
+            <nav>
+                <a href="{{ url_for('tasks.view_tasks') }}">Home</a>
+                <!-- ager user login ho tab option denge -->
+                {% if 'user_id' in session %}
+                    <a href="{{ url_for('auth.logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('auth.login')}}">Login</a>
+                {% endif %}
+            </nav>
+        </div>
+     </header>
+
+    <!-- --------------------MAIN CONTENT----------------------- -->
+     <main class="container">
+        <!--Flash messages pe kaam kar lete hian-->
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% for category, message in messages %}
+            <!-- pahle category msg show karenge -->
+                <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
+
+        <!--For Child Pages Content-->
+        {% block content %} 
+        
+        {% endblock %}
+     </main>
+    <!-- --------------------FOOTER----------------------- -->
+     <footer>
+        <div class="container">
+            <p>&copy; {{2025}} My Flask To-Do App</p>
+            <h3>Developed by Aditya Chauhan</h3>
+        </div>
+     </footer>
+<!-- Ye flash messages ko 3 sec me disappear kr dega -->
+     <script>
+        setTimeout(function() {
+            const flashes = document.querySelectorAll('.flash');
+            flashes.forEach(flash => {
+                flash.style.transition = "opacity 0.8s ease";
+                flash.style.opacity = "0";  // fade out
+                
+                // DOM se remove bhi kar denge
+                setTimeout(() => flash.remove(), 800); 
+            });
+        }, 3000); // 3000 ms = 3 seconds
+    </script>
+
+
+</body>
+</html>
+

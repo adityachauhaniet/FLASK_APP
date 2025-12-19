@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %} Tasks {% endblock %}
+
+{% block content %}
+    <div class="task-box">
+        <h2>Your Tasks</h2>
+        <!-- ---------------Adding the tasks-------------------------- -->
+         <form action="{{ url_for('tasks.add_task')}}" method="POST" class="task-form">
+            <div class="form-group" > <!--Task Input Field-->
+                <label for="task">New Task:</label>
+                <input type="text" name="title" id="title" placeholder="Enter your new task here" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Task</button>
+         </form>
+
+        <!-- Ab logic likhte hain -->
+        {% if tasks %} <!--Ager task h to-->
+   
+        <!-- Clear all tasks -->
+         <form action="{{ url_for('tasks.clear_tasks') }}" method="POST">
+            <button type="submit" class="btn btn-clear">Clear All Tasks</button>
+         </form>
+         <br>
+         <div class="task-table-wrapper">
+
+             <table class="task-table">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Status</th>
+                        <th>Created At</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <!-- Ab table ki body create karte hain-->
+                 <tbody>
+                    {% for task in tasks %}
+                    <tr>
+                        <td>{{ task.title }}</td><!--Task Name-->
+                        <td>{{ task.status }}</td> <!--Task Status-->
+                        <td>{{ task.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td> <!--Created At-->
+                        <td>
+                            <!-- Next Status Button -->
+                            <form action="{{ url_for('tasks.update_status', task_id=task.id) }}" method="POST" style="display:inline;">
+                                <button type="submit" class="btn-small">Next</button>
+                            </form>
+    
+                            <!-- Delete Button -->
+                            <form action="{{ url_for('tasks.delete_task', task_id=task.id) }}" method="POST" style="display:inline;">
+                                <button type="submit" class="btn btn-delete">Delete</button>
+                            </form>
+                        </td>    
+                    </tr>
+                    {% endfor %}
+                 </tbody>
+             </table>
+         </div>
+<!-- AB Task Table pe aate hain -->
+         <!-- Ager koi task nhi hua to -->
+          {% else %}
+            <p>No tasks available. Add a new task to get started!</p>
+          {% endif %}
+    </div>
+    {% endblock %}
+
+
+
+    
+    

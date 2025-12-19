@@ -1,0 +1,15 @@
+<!-- Mannual Form Handling Via Flask -->
+
+{% extends "base.html" %}
+
+{% block title %}Form Page{% endblock %}
+
+{% block content %}
+<h2>Send Your Feedback</h2>
+<form action="/" method="POST"> <!--Esko hum home page pe hi leke jayenge-->
+    <label >Name:</label><br>
+    <input type="text" name="name"  placeholder="Enter your name"><br>
+    <input type="submit" value="Submit">
+    
+</form>
+{% endblock %}

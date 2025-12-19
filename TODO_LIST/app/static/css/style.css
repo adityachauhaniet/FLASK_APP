@@ -1,0 +1,392 @@
+body{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background-color: #f8fafa; */
+    background-color: #b4bcc1;
+    /* margin-top: 10px; */
+}
+
+.container{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+main.container{
+        padding: 20px 12px;
+        max-width: 100%;  /*Desktop limit, mobile limit*/
+}
+
+/* Header & footer limit me rahe */
+header .container,
+footer .container{
+    max-width: 1100px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+header, footer{
+    width: 100%;
+}
+
+ header {
+    background: linear-gradient(to right, #0062Eb, #33AeFF);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    padding-left: 0;
+    padding-right: 0;
+} 
+
+header h1{
+    margin: 0;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+header nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 5px;
+    transition: color 0.3s ease ;
+    
+}
+header nav a:hover{
+    color: hsl(51, 100%, 50%);
+    transform: scale(2);
+}
+
+/* -------------------------------FOOTER ------------------------ */
+footer{
+    background-color: #343940;
+    color: #ccc;
+    padding: 15px 0;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 60px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer p{
+    margin: 0;
+}
+
+/* Flash messages */
+.flash.success{
+    color: green;
+}
+
+/* ------------------TASK TABLE------------------- */
+.task-box{
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto; /* top& bottom, left&right */
+    min-height: 550px;
+    padding: 25px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.856);
+    transition: 1s;
+    background-color: #ffffffdc;
+    /* background-color: hwb(73 51% 30%); */
+    font-weight: 450;
+}
+
+/* TASK INPUT FIELD FIX */
+.task-form .form-group{
+    justify-content: center; /*task ka input box center pe aa jayega*/
+    gap: 10px; /*8New Task aur task input box ke bich me gap*/
+}
+/* ab task ke input box pe ate hain */
+.task-form input{
+    width: 60%;
+    padding: 8px 10px; /*top&botom, left&right*/
+    border-radius: 6px; 
+    border: 1px solid #ccc;
+}
+
+/* sirf table area ko scrollable bana do */
+.task-table-wrapper{
+    max-height: 280px;        /* jitna upar/neeche visible chahiye */
+    overflow-y: auto;         /*y-axis pe scroll hoga*/
+    margin-top: 10px;
+}
+
+/* task table pe aate hain */
+.task-table{
+    width: 100%;                /*task table ka pura width cover karega*/
+    border-collapse: collapse;  /*task border ke ander hi rhega content*/
+    table-layout: fixed;        /*columns ka width fix karega*/
+}
+
+/* Ab task-table ke header ko sticky bna dete hain */
+.task-table thead th{
+    position: sticky;
+    top: 0;                  /*scroll ke time pe top pe chipka rhega*/
+    /* background: #f2f2f2;  warna transparent ho jayega */
+    background-color: #d2dfe8fd;
+    z-index: 2;             /* rows ke upar dikhne ke liye */
+    padding: 8px 10px;
+}
+
+/*task-table ke th, td set karte hain*/
+.task-table th, .task-table td{
+    padding:6px 10px;        /*sabhi task me padding ho jayegi*/
+    text-align: left;        /*sbhi left-start se start hone*/
+    word-wrap: break-word;   /*long word bhi wrap honge*/
+    white-space: normal;     /*text bhi normal wrap ho sake*/
+}
+
+.task-box:hover{
+    transform: scale(1.01);
+}
+
+.task-table th{
+    background: #f2f2f2;
+}
+/*------------------------------------------------BUTTONS---------------------------*/
+.btn{
+    padding: 6px 14px;            /*top&bottom, left&right*/
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-primary{
+    background: #007bff;
+    color: white;
+}
+
+.btn-primary:hover{
+    background-color: #0056b3;
+}
+
+
+/* DELETE BUTTON */
+.btn-delete{
+    background: #dc3545;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn-delete:hover{
+    background: #c82333;
+}
+/* badges */
+.badge{
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+}
+.badge.pending{
+    background: #ffc107;
+}
+.badge.working{
+    background-color: #17a2b8;
+}
+.badge.done{
+    background: #28a745;
+}
+/* badges ko jo btn conreol kareegi */
+.btn-small{
+    font-size: 12px;
+    padding: 6px 12px;
+    border: none;
+    background-color: #6c767d;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-small:hover{
+    background-color: #4a5057;
+}
+/* CLEAR BUTTON */
+.btn-clear{
+    background-color: #dc3545;
+    color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.btn-clear:hover{
+    background-color: #c82333;
+}
+
+
+/* -------------------------MAIN --------------------------------- */
+ main {
+    
+    background-color: transparent;
+    /* min-height: 500px;                      minimum height, but zarurat padne par badh sakti hai */
+    border: none;
+    /* border-radius: 10px; */
+    box-shadow: none;
+    /* text-align: center; */
+    padding: 40px 0;
+    /* margin-top: 10px; */
+}
+/*------------------------------------------- REGISTRATION BOX ------------------------------*/
+.registration-box{
+    height: 400px;
+    padding: 10px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 50px;
+}
+
+.form-group{
+    display: flex;            /*label+input same row me aa jayenge*/
+    justify-content: space-between;  /* */
+    align-items: center;      /* vertical center. Jo abhi tk i/p box bda tha wo size me aa jayega */
+    /* font-size: 16px; */
+    font-weight: 500; 
+    margin-bottom: 18px; /*registration wale page me box ke bich space badh jayega*/
+}
+
+.form-group label{
+    width: 140px;             /*sabhi input box label se same width pe ho jaenge*/
+    text-align: right;
+    margin-right: 12px;       /*label aur input box ke bich gap*/
+}
+
+
+/*-------------------- INPUT BOX OF (REG, LOGIN) --------------------------------------*/
+.input-box{
+    /* width: 230px;             input ki fixed width */
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.input-box{
+    width: 100%;
+    max-width: 230px;
+}
+
+/* Inout box pe click karne per border-color change hoga */
+.input-box:focus{
+    border-color: #0062eb;
+    box-shadow: 0 0 3px rgba(0, 98, 235, 0.6);
+}
+
+
+/*------------------------------------ REGISTRATION, LOGIN BOX---------------------------------- */
+.registration-box, .login-box{
+    max-width: 420px;
+    width: 100%;
+    margin: 60px auto;
+    text-align: center;           /* heading center rahe */
+
+}
+
+.registration-box, .login-box{
+    background: #ffffffd8;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.527);
+    padding: 30px 25px; /*top*down, left&right */
+}
+
+/* but form ke andar text center nahi, normal lage */
+.registration-box form, .login-box form{
+    text-align: center;
+}
+
+.login-box .form-group{
+     margin: 20px auto;
+}
+.login-box h2{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+
+
+/* ---------------------------------------- FLASH MESSAGES ------------------------------------------- */
+.flash {
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Flash colors */
+.flash.success { background: #d4edda; color: #155724; }
+.flash.danger  { background: #f8d7da; color: #721c24; }
+.flash.warning { background: #fff3cd; color: #856404; }
+.flash.info    { background: #cce5ff; color: #004085; }
+
+/* -------------------------MOBILE RESPONSIVENESS------------------- */
+/* ADD MEDIA QUERY */
+@media (max-width: 786px){
+    .login-box, .registration-box{
+        margin:30px 15px;
+        padding: 25px 20px;
+    }
+
+    .form-group{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-group label{
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .input-box{
+        max-width: 100%;
+    }
+
+    .task-form input{
+        width: 100%;
+    }
+
+    .task-box{
+        width: 100%;
+        max-width: 100%;
+        margin: 20px 0;
+        border-radius: 12px;
+    }
+
+    .task-form{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .task-form button{
+        width: 100%;
+    }
+
+    /* Horizontal scroll only for table */
+    .task-table-wrapper{
+        overflow-x: auto;
+    }
+    
+    .task-table{
+        min-width: 600px;
+    }
+
+    /* Mobile pe header/footer ke andar content full feel de */
+    header .container,
+    footer .container{
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+

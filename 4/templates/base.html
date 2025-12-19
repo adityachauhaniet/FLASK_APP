@@ -1,0 +1,58 @@
+<!-- Mannual Form Handling Via Flask -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        My Site
+        {% endblock %}  
+    </title>
+    <!-- <style>
+        body{font-family:Arial, Helvetica, sans-serif;
+             padding:20px;
+             background-color:#f5f5f5
+            }
+        header, footer{
+            background-color: #333; padding: 10px; color:white; text-align:center;
+            }
+            nav a{margin: 0 10px; color:white; text-decoration:none}
+            main{
+                background-color:white; padding:20px; margin-top: 20px; border-radius: 5px, solid, black;
+            }
+
+    </style> -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to my site</h1>
+        <!-- Home page pe jane ke liye -->
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <!-- main msgs kaise show karan h wo likh dete hain -->
+    <!-- msgs ko retrieve kro -->
+     {% with messages = get_flashed_messages() %}
+     <!-- ager msgs a gye tb -->
+     {% if messages %}
+     <!-- ager ek se jyada msgs huye tb, uske for loop lga denge, aur list me store kar lenge -->
+     <ul style="color:green;">
+        {% for msgs in messages %}
+        <li>{{ msgs }}</li>
+        {% endfor %}
+     </ul>
+     {% endif %}
+     {% endwith %}
+     <!-- ab humara block ka content jo hoga wo yha pe ayega -->
+     {% block content %}
+
+     {% endblock %}
+
+    <footer>
+        <p>&copy;2025 CODINGWISE SITE</p>
+    </footer>
+</body>
+</html>

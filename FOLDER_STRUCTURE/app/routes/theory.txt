@@ -1,0 +1,2 @@
+Abhi tk hum, jitne bhi routes the like login,register,thankoyou,dashboard etc sabko app.py(main aap) me hi bna rhe the jo ki unprofessional h aur managable nhi tha.
+Esme bhi hum __init__.py banana padega taki jisase hum route ko import karke eske features ko(pages) ko use kr sake

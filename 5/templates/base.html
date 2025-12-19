@@ -1,0 +1,37 @@
+<!-- Mannual Form Handling Via Flask -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Flask-WTF Form
+        {% endblock %}  
+    </title>
+</head>
+<body>
+    <h1>Flask-WTF Registration </h1>
+    <!-- main msgs kaise show karan h wo likh dete hain -->
+    <!-- msgs ko retrieve kro -->
+     {% with messages = get_flashed_messages(with_categories=True) %}
+     <!-- ager msgs a gye tb -->
+     {% if messages %}
+     <!-- ager ek se jyada msgs huye tb, uske for loop lga denge, aur list me store kar lenge -->
+        {% for category, msgs in messages %} <!-- unpacking , ager hain to unko list krdo--> 
+        <p style="color:green;">{{ msgs }}</p>
+        {% endfor %}
+   
+     {% endif %}
+     {% endwith %}
+     <!-- ab humara block ka content jo hoga wo yha pe ayega -->
+     {% block content %}    
+  <!-- Content will be injected here , esko child pages pe use karenge -->
+     {% endblock %}
+
+    <footer>
+        <p>&copy;2025 CODINGWISE SITE</p>
+    </footer>
+</body>
+</html>

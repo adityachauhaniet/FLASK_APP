@@ -1,0 +1,10 @@
+Es folder me hum apna database structure store karte hain.
+Matlab eske ander jitni bhi .py wali file hongi uske ander ek table define hoga, matlab ye codes store karengi, humare Database Structure ka.
+Sabhi .py fi8les me tables define honge like: user table, post table, comment table ect.
+
+Kyu Use Karna H Aise-->
+1. Sabse pahle dtabase ka logic different rahega routes logic se, esiliye database wala models and route wala routes ke ander rakhenge.
+2.Hum ytha pe table structure ek baar define karle usko reuser karenge, dobara likhne ki jarurat nhi padegi.
+3.Yha pe apne app ko ek real databse se connect kerne me bahut assani hoti h.
+4. Yha pe humn relationship bhi set kar sakte hain feature ke bich me like, ek user ke ek se jyada post ho sakte hain.
+5.Humara code CLEAR, TESTABLE, REUSABLE rahega.
