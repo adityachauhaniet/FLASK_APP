@@ -1,5 +1,0 @@
-login page show karenge
-accecp, username, password
-login data ko session me store karenge
-jb login successful ho jayega hum user ko redirect karke welcome page pe leke jayenge
-Welcome page me ek feature hoga logout ka 

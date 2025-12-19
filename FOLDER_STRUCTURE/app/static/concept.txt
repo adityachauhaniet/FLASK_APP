@@ -1,3 +1,0 @@
-1. Es folder me wo fies rahengi that dont's change. Ye dynamic files nhi hain, sabhi users ke liye same rahti hain.
-2. Aur flask satic ko  bydefault use karta h.
-3. Enko serve karne ke liye routes ki jaroorat nhi h, Flask apne aap seaech kr leta h.

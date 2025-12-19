@@ -1,1 +1,0 @@
-1. Eske ander humari sari HTML file store hongi, jo ki humare user ko browser pe dikhne wali hain.
